@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from CatApp.views import CatShopList, CatShopDetails
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/catshop/', CatShopList.as_view()),
+     path('api/products/<int:pk>/', CatShopDetails.as_view())
 ]
